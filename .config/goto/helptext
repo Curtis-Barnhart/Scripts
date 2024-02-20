@@ -1,0 +1,15 @@
+goto [--set|-s] <label>
+    - associate label with the current working directory
+    - you cannot set a label that is already set
+goto [--unset|-u] <label>
+    - removes association between label and its associated directory
+goto [--where|-w] <label>
+    - prints the directory a label is associated with
+goto [--list|-l] [all]
+    - if all, lists all set labels and their associated directories
+    - if all is not present, list only set labels
+goto [--help|-h]
+    - prints this help text
+goto <label>
+    - changes directory to the directory associated with label
+    - the command must be sourced for this to take effect
