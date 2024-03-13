@@ -7,7 +7,7 @@ know_sync () {
     local commit_message
 
     if [ "$1" = "pull" ]; then
-        cd ~/ObsidianProjects/Knowledge
+        cd ~/Knowledge
         git pull
     elif [ "$1" = "push" ]; then
         if [ "$2" = "" ]; then
@@ -15,7 +15,7 @@ know_sync () {
         else
             commit_message="$2"
         fi
-        cd ~/ObsidianProjects/Knowledge
+        cd ~/Knowledge
         git add .
         git commit -m "$commit_message"
         git push
