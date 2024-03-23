@@ -5,6 +5,8 @@
 
 know_sync () {
     local commit_message
+    local previous_location
+    previous_location="$(pwd)"
 
     if [ "$1" = "pull" ]; then
         cd ~/Knowledge
@@ -30,5 +32,7 @@ know_sync () {
     else
         echo "Usage: know_sync [pull|push|help]"
     fi
+
+    cd "$previous_location"
 }
 
