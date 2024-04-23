@@ -18,6 +18,8 @@ know_sync () {
             commit_message="$2"
         fi
         cd ~/Knowledge
+        # this next line runs a python script in the directory that makes sure all assets are in dark mode
+        ./mode_shift.py dark
         git add .
         git commit -m "$commit_message"
         git push
