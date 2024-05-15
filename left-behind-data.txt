@@ -1,6 +1,0 @@
-/home/curtisb/.local/share/tts
-Place for models to be stored by TTS python library for text to speech.
-/home/curtisb/.cache/chroma
-Place for models to be stored by chromaDB python library for vector databases
-for word embedding (models are for embedding)
-
