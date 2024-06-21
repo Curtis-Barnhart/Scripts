@@ -67,7 +67,7 @@ _venv_completions() {
             ;;
 
         *)
-            COMPREPLY=""
+            unset COMPREPLY
             ;;
     esac
 }

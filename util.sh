@@ -11,6 +11,7 @@ array_contains() {
     return 1;
 }
 
+# prints out an array
 print_table_array() {
     local index array_end
     local array=$1
