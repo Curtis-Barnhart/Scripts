@@ -56,7 +56,7 @@ _venv_completions() {
     # The first argument will always be "create/-c", "open/-o", "list/-l", "remove/-r", or "help/-h"
     if [[ ${#COMP_WORDS[@]} < 3 ]]; then
         COMPREPLY=($(compgen -W "create open list remove help" ${COMP_WORDS[1]}))
-        return 0
+        return
     fi
 
     # COMPREPLY is magic variable to hold completions lol
