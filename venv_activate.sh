@@ -21,7 +21,7 @@ venv() {
                 echo "virtual environment $VENV_PATH$2 created"
             fi
             ;;
-        "open" | "-o")
+        "activate" | "-a")
             array_contains existing_envs $2
             if [ $? = 0 ]; then
                 source "$VENV_PATH$2/bin/activate"
@@ -55,14 +55,14 @@ venv() {
 _venv_completions() {
     # The first argument will always be "create/-c", "open/-o", "list/-l", "remove/-r", or "help/-h"
     if [[ ${#COMP_WORDS[@]} < 3 ]]; then
-        COMPREPLY=($(compgen -W "create open list remove help" ${COMP_WORDS[1]}))
+        COMPREPLY=($(compgen -W "create activate list remove help" ${COMP_WORDS[1]}))
         return
     fi
 
     # COMPREPLY is magic variable to hold completions lol
     # COMP_WORDS is a list of already or partially completed words the user has typed
     case "${COMP_WORDS[1]}" in
-        "open" | "-o" | "remove" | "-r")
+        "activate" | "-a" | "remove" | "-r")
             COMPREPLY=($(compgen -W "$(ls ~/py_venvs)" ${COMP_WORDS[2]}))
             ;;
 
