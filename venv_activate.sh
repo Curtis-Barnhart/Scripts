@@ -14,12 +14,12 @@ venv() {
         "create" | "-c")
             array_contains existing_envs $2
             if [ $? = 0 ]; then
-                echo "venv $2 already exists - exiting"
+                echo "venv: environment '$2' already exists - exiting"
             elif [ "$2" = "" ]; then
-                echo "venv name not provided - exiting"
+                echo "venv: environment name not provided - exiting"
             else
                 python3 -m venv "$VENV_PATH$2"
-                echo "virtual environment $VENV_PATH$2 created"
+                echo "venv: environment '$VENV_PATH$2; created"
             fi
             ;;
         "activate" | "-a")
@@ -27,7 +27,7 @@ venv() {
             if [ $? = 0 ]; then
                 source "$VENV_PATH$2/bin/activate"
             else
-                echo "venv $2 does not exist - exiting"
+                echo "venv: environment '$2' does not exist - exiting"
             fi
             ;;
         "list" | "-l")
@@ -37,16 +37,16 @@ venv() {
             array_contains existing_envs $2
             if [ $? = 0 ]; then
                 rm -r "$VENV_PATH$2"
-                echo "venv $2 was successfully removed"
+                echo "venv: environment $2 was successfully removed"
             else
-                echo "venv $2 does not exist - exiting"
+                echo "venv: environment $2 does not exist - exiting"
             fi
             ;;
         "help" | "-h")
-            echo "oops - no help yet"
+            echo "venv: oops - no help yet"
             ;;
         *)
-            echo "oops"
+            echo "venv: oops"
             ;;
     esac
 }
