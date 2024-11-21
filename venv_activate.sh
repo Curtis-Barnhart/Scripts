@@ -19,7 +19,7 @@ venv() {
                 echo "venv: environment name not provided - exiting"
             else
                 python3 -m venv "$VENV_PATH$2"
-                echo "venv: environment '$VENV_PATH$2; created"
+                echo "venv: environment '$VENV_PATH$2' created"
             fi
             ;;
         "activate" | "-a")
