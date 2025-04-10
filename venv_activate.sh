@@ -60,15 +60,16 @@ _venv_completions() {
 
     # COMPREPLY is magic variable to hold completions lol
     # COMP_WORDS is a list of already or partially completed words the user has typed
-    case "${COMP_WORDS[1]}" in
-        "activate" | "-a" | "remove" | "-r")
-            COMPREPLY=($(compgen -W "$(ls ~/py_venvs)" ${COMP_WORDS[2]}))
-            ;;
-
-        *)
-            unset COMPREPLY
-            ;;
-    esac
+    if [[ ${#COMP_WORDS[@]} < 4 ]]; then
+        case "${COMP_WORDS[1]}" in
+            "activate" | "-a" | "remove" | "-r")
+                COMPREPLY=($(compgen -W "$(ls ~/py_venvs)" ${COMP_WORDS[2]}))
+                ;;
+            *)
+                unset COMPREPLY
+                ;;
+        esac
+    fi
 }
 
 complete -F _venv_completions venv
